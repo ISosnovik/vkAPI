@@ -53,4 +53,4 @@ resolveScreenName(screen_name=None)
 ```
 
 ## Examples
-There are several examples of use of *___vkapi__*. Check out the [examples](https://github.com/ISosnovik/vkAPI/tree/master/examples)
+There are several examples of use of *__vkapi__*. Check out the [examples](https://github.com/ISosnovik/vkAPI/tree/master/examples)
