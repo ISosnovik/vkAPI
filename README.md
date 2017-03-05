@@ -58,4 +58,5 @@ There are several [examples](https://github.com/ISosnovik/vkAPI/tree/master/exam
 + [Public Methods](https://github.com/ISosnovik/vkAPI/blob/master/examples/Public%20methods.ipynb)
 + [Receive Token](https://github.com/ISosnovik/vkAPI/blob/master/examples/Receive%20token.ipynb)
 + [Private Methods](https://github.com/ISosnovik/vkAPI/blob/master/examples/Private%methods.ipynb)
++ [Execute](https://github.com/ISosnovik/vkAPI/blob/master/examples/Execute.ipynb)
 
