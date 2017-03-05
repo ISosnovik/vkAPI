@@ -53,4 +53,9 @@ resolveScreenName(screen_name=None)
 ```
 
 ## Examples
-There are several examples of use of *__vkapi__*. Check out the [examples](https://github.com/ISosnovik/vkAPI/tree/master/examples)
+There are several [examples](https://github.com/ISosnovik/vkAPI/tree/master/examples) of use of *__vkapi__*.
+
++ [Public Methods](https://github.com/ISosnovik/vkAPI/blob/master/examples/Public%20methods.ipynb)
++ [Receive Token](https://github.com/ISosnovik/vkAPI/blob/master/examples/Receive%20token.ipynb)
++ [Private Methods](https://github.com/ISosnovik/vkAPI/blob/master/examples/Private%methods.ipynb)
+
