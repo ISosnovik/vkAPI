@@ -51,3 +51,6 @@ resolveScreenName(screen_name=None)
     and its ID by screen name.
     https://vk.com/dev/utils.resolveScreenName
 ```
+
+## Examples
+There are several examples of use of *___vkapi__*. Check out the [examples](https://github.com/ISosnovik/vkAPI/examples)
