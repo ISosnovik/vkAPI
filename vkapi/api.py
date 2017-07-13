@@ -22,7 +22,7 @@ ACCESS_TOKEN = None
 
 def call(method, **params):
     url = __prefix + method
-    params = {k: __str(v) for k,v in params.items()}
+    params = {k: __str(v) for k,v in params.items() if v != None}
     if AccessToken.token:
         # print("here is the token")
         params['access_token'] = AccessToken.token
