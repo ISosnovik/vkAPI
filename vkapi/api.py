@@ -11,7 +11,7 @@ def parse_response(response):
     try:
         return response['response']
     except KeyError:
-        raise VKError(response['error']['error_msg'])
+        print(VKError(response['error']['error_msg']))
 
 class AccessToken:
     token = None
@@ -24,8 +24,9 @@ def call(method, **params):
     url = __prefix + method
     params = {k: __str(v) for k,v in params.items()}
     if AccessToken.token:
-        print("here is the token")
+        # print("here is the token")
         params['access_token'] = AccessToken.token
+    # print(params)
     request = requests.get(url, params=params)
     return request.json()
 
