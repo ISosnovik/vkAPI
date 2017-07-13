@@ -24,9 +24,7 @@ def call(method, **params):
     url = __prefix + method
     params = {k: __str(v) for k,v in params.items() if v != None}
     if AccessToken.token:
-        # print("here is the token")
         params['access_token'] = AccessToken.token
-    # print(params)
     request = requests.get(url, params=params)
     return request.json()
 
