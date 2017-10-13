@@ -95,55 +95,30 @@ def report(user_id=None, type=None, comment=None):
     result = call('users.report', **params)
     return parse_response(result)
 
-
-def search(q=None, sort=None, offset=None, count=None, fields=None, city=None,\
-           country=None, hometown=None, university_country=None, university=None,\
-           university_year=None, university_faculty=None, university_chair=None,\
-           sex=None, status=None, age_from=None, age_to=None, birth_day=None,\
-           birth_month=None, birth_year=None, online=None, has_photo=None,\
-           school_country=None, school_city=None, school_class=None, school=None,\
-           school_year=None, religion=None, interests=None, company=None,\
-           position=None, group_id=None, from_list=None):
+    
+ def search(**search_params):
     """
     Returns a list of users matching the search criteria.
     https://vk.com/dev/users.search
     """
-    params = {
-        'q': q,
-        'sort': sort,
-        'offset': offset,
-        'count': count,
-        'fields': fields,
-        'city': city,
-        'country': country,
-        'hometown': hometown,
-        'university_country': university_country,
-        'university': university,
-        'university_year': university_year,
-        'university_faculty': university_faculty,
-        'university_chair': university_chair,
-        'sex': sex,
-        'status': status,
-        'age_from': age_from,
-        'age_to': age_to,
-        'birth_day': birth_day,
-        'birth_month': birth_month,
-        'birth_year': birth_year,
-        'online': online,
-        'has_photo': has_photo,
-        'school_country': school_country,
-        'school_city': school_city,
-        'school_class': school_class,
-        'school': school,
-        'school_year': school_year,
-        'religion': religion,
-        'interests': interests,
-        'company': company,
-        'position': position,
-        'group_id': group_id,
-        'from_list': from_list
-    }
-    result = call('users.search', **params)
-    return parse_response(result)
-
-
+	search_tags = (
+		'q','sort','offset','count','fields',\
+		'city','country','hometown','university_country', 'university',\
+		'university_year', 'university_faculty', 'university_chair',\
+		'sex', 'status', 'age_from', 'age_to', 'birth_day',\
+	    'birth_month', 'birth_year', 'online', 'has_photo',\
+	    'school_country', 'school_city', 'school_class', 'school',\
+	    'school_year', 'religion', 'interests', 'company',\
+		'position', 'group_id', 'from_list'
+    )
+    
+	# checking if the param passed exists
+	# using search_params.keys() gives runtime error
+	for param in list(search_params):
+		if param not in search_tags:
+			del search_params[param]
+			# remove the key-value from the passed args
+            
+	# not sure if search_params should be **search_params
+	result = call('users.search', search_params)
+	return parse_response(result)
