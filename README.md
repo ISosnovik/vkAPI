@@ -28,13 +28,13 @@ users.get(user_ids=1, fields='city')
 
 ## Access Token
 
-Some methods use `access_token`. It shouldn't be passed as a parameter to method. Nevertheless, it is defined as a class property `token` in `vkapi.vkapi.AccessToken` class. Just set it at the beginnig:
+Some methods use `access_token`. It shouldn't be passed as a parameter to method. Nevertheless, it is defined as a class property `token` in `vkapi.vkapi.Config` class. Just set it at the beginnig:
  
 ```python
 from vkapi.methods import *
-from vkapi import AccessToken
+from vkapi import Config
 
-AccessToken.token = 'h3r3-1s-th3-4cc3ss-t0k3n'
+Config.token = 'h3r3-1s-th3-4cc3ss-t0k3n'
 account.getInfo(fields='country')
 ```
 And that is it.

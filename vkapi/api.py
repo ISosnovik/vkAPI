@@ -1,6 +1,6 @@
 import requests
 
-__all__ = ['VKError', 'call', 'parse_response', 'AccessToken']
+__all__ = ['VKError', 'call', 'parse_response', 'Config']
 
 
 # Public utils and helpers
@@ -13,18 +13,18 @@ def parse_response(response):
     except KeyError:
         print(VKError(response['error']['error_msg']))
 
-class AccessToken:
+class Config:
     token = None
+    version = '5.74'
 
-
-# Public general methods
-ACCESS_TOKEN = None
 
 def call(method, **params):
     url = __prefix + method
     params = {k: __str(v) for k,v in params.items() if v != None}
-    if AccessToken.token:
-        params['access_token'] = AccessToken.token
+    if Config.token:
+        params['access_token'] = Config.token
+    if Config.version:
+        params['v'] = Config.version 
     request = requests.get(url, params=params)
     return request.json()
 
